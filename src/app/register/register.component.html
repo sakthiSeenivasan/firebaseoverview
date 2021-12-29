@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center">
+    <div class="container">
+        <div class="col-md-6">
+            <form [formGroup]="registerForm">
+                <h3>Firebase Register</h3>
+                <div class="form-group p-2">
+                    <input type="email"  class="form-control" formControlName="email" [class.is-invalid]="registerForm.controls.email.invalid"
+                        placeholder="enter email ID">
+                    <small class="invalid-feedback" >please enter email</small>
+                        <!-- <p *ngIf="errorMessage.length >0" class="text-daer">{{errorMessage}}</p> -->
+                </div>
+                <div class="form-group p-2">
+                    <input type="password"  class="form-control" formControlName="password" [class.is-invalid]="registerForm.controls.password.invalid"
+                        placeholder="enter password" >
+                        <small class="invalid-feedback">please enter password</small>
+                </div>
+                <div class="form-group p-2">
+                    <input type="confirmpassword"  class="form-control" formControlName="confirmPassword"
+                    [class.is-invalid]="registerForm.controls.confirmPassword.value !== registerForm.controls.password.value"
+                        placeholder="confirm password" required>
+                        <small class="invalid-feedback">Enter the same password</small>
+                </div>
+                <div class="form-group p-2">
+                    <button  [disabled]="registerForm.invalid" (click)="register()" class="btn btn-primary">Register</button>
+                    <div class="register"><a href="#" routerLink="/Login"></a></div>
+                    <br>
+                </div>
+                
+                
+                
+                
+            </form>
+            <!-- <div class="form-group">
+                <p *ngIf="error.message.length >0" class="text-danger">{{error.message}}</p>
+                <p *ngIf="message.length >0" class="text-info">{{message}}</p>
+            </div> -->
+        </div>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="gotoFire()">FireStore</button>
+<!-- <button class="btn btn-primary" (click)="timeout()">HEllo</button> -->
