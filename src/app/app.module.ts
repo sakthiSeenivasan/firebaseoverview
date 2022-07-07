@@ -12,6 +12,7 @@ import { LoginFireComponent } from './login-fire/login-fire.component';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { FirestoreComponent } from './firestore/firestore.component';
 import { ProductsComponent } from './products/products.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +30,8 @@ import { ProductsComponent } from './products/products.component';
     AngularFireAuthModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFirestoreModule
-  
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

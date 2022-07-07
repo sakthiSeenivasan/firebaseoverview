@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { identity } from 'rxjs';
+import * as bootstrap from 'bootstrap';
+
+
 
 declare let $: any;
 @Component({
@@ -11,7 +14,7 @@ declare let $: any;
 })
 export class ProductsComponent implements OnInit {
   userForm: FormGroup;
-  constructor(private fs: AngularFirestore) {
+  constructor(private fs: AngularFirestore,) {
     this.userForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       age: new FormControl('', Validators.required),
@@ -54,7 +57,4 @@ export class ProductsComponent implements OnInit {
   addUser() {
     $('#addUserModal').modal('show');
   }
- 
-
-
 }
